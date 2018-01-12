@@ -1,0 +1,11 @@
+<h2>TBS Employees List</h2>
+<ul class="employees">
+  <li *ngFor="let employee of employee" (click)="onSelect(employee)" [class.selected]="employee === selectedEmployee"
+  (click)="onSelect(employee)">
+  <a routerLink="/detail/{{employee.id}}"></a>
+    <span class="badge">{{employee.id}}</span> {{employee.name}}
+  </li>
+</ul>
+<app-employee-detail [employee]="selectedEmployee"></app-employee-detail>
+
+
